@@ -5,14 +5,17 @@ if __name__ == "__main__":
     input_file_path = source / "resources/input.txt"
     with input_file_path.open() as file:
         lines = file.read().splitlines()
-        answer = 0
+        answer: int = 0
         for line in lines:
-            for index, character in enumerate(line):
+            number_to_sum: str = ""
+            for character in line:
                 if character.isdigit():
-                    answer += int(character)
+                    number_to_sum += character
                     break
-            for index, character in enumerate(line[::-1]):
+            line = line[::-1]
+            for character in line:
                 if character.isdigit():
-                    answer += int(character)
+                    number_to_sum += character
                     break
+            answer += int(number_to_sum)
         print(answer)
