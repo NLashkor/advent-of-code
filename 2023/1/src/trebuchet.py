@@ -12,8 +12,7 @@ if __name__ == "__main__":
                 if character.isdigit():
                     number_to_sum += character
                     break
-            line = line[::-1]
-            for character in line:
+            for character in line[::-1]:
                 if character.isdigit():
                     number_to_sum += character
                     break
